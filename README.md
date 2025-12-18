@@ -2,7 +2,7 @@
 
 A local, Graph-backed mail client + cache + agent.
 
-This repo is a **monorepo** with three apps:
+This repo is a **master repo** that pulls in three separate repos as **git submodules**:
 - `sync-app/`: builds/updates a local SQLite cache from Microsoft Graph (folders + date range + attachments)
 - `agent-app/`: intent→safe query templates over the local cache, plus `sync now` / `sync status`
 - `web-server-app/`: local 3-pane mail UI + chat grounded in the cache; shells out to `agent-app`
@@ -59,13 +59,28 @@ Then open:
 - The web server and the agent both default to `sync-app/config.yaml`.
 - The agent emits cache coverage warnings for date-based queries and can kick off a full sync.
 
+## Clone (with submodules)
+
+- `git clone --recurse-submodules <MASTER_REPO_URL>`
+
+If you already cloned without submodules:
+
+- `git submodule update --init --recursive`
+
 ## Publishing to GitHub
 
-This workspace initializes a local git repo. To publish as a GitHub repo named **AI Exchange Client**:
+This project is designed to be published as 4 repos:
 
-- `git add -A`
-- `git commit -m "Initial import"`
-- Create an empty repo on GitHub named `AI Exchange Client` (or `ai-exchange-client`).
-- Add the remote and push:
-  - `git remote add origin <YOUR_GITHUB_URL>`
-  - `git push -u origin main`
+- Master: `AI-Exchange-Client` (this repo)
+- Subrepos:
+  - `AI-Exchange-Sync-App`
+  - `AI-Exchange-Chat-App` (checked out under `agent-app/`)
+  - `AI-Exchange-Web-Server-App`
+
+High level:
+
+1) Create the 4 empty repos on GitHub.
+2) In each subrepo folder, add `origin` and push `main`.
+3) Update this repo's `.gitmodules` URLs to the GitHub URLs, commit, then push the master repo.
+
+After the URLs are set, cloning works normally with `--recurse-submodules`.
