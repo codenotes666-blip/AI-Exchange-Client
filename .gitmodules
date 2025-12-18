@@ -1,0 +1,9 @@
+[submodule "sync-app"]
+	path = sync-app
+	url = ../AI-Exchange-Sync-App
+[submodule "agent-app"]
+	path = agent-app
+	url = ../AI-Exchange-Chat-App
+[submodule "web-server-app"]
+	path = web-server-app
+	url = ../AI-Exchange-Web-Server-App

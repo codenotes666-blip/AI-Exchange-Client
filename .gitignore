@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+
+# Local caches
+*.sqlite
+*.sqlite3
+mail_cache.sqlite
+
+# Config (may include local paths)
+config.yaml
+
+# Logs/pids
+*.log
+*.pid
+
+# OS/editor
+.DS_Store
+.vscode/
