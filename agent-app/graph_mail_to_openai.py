@@ -3,6 +3,13 @@ import requests
 import msal
 import json
 
+try:
+    from env_loader import load_env
+
+    load_env()
+except Exception:
+    pass
+
 # =========================
 # Configuration (ENV ONLY)
 # =========================

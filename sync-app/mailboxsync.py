@@ -16,6 +16,13 @@ import urllib.parse
 import msal
 import requests
 
+try:
+    from env_loader import load_env
+
+    load_env()
+except Exception:
+    pass
+
 
 GRAPH_BASE = "https://graph.microsoft.com/v1.0"
 SCOPE = ["https://graph.microsoft.com/.default"]

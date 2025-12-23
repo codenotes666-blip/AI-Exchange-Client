@@ -6,6 +6,7 @@ This repo is a **single repo (monorepo)** containing three apps:
 - `sync-app/`: builds/updates a local SQLite cache from Microsoft Graph (folders + date range + attachments)
 - `agent-app/`: intent→safe query templates over the local cache, plus `sync now` / `sync status`
 - `web-server-app/`: local 3-pane mail UI + chat grounded in the cache; shells out to `agent-app`
+- `filesearch-app/`: Windows-only filesystem search agent powered by Voidtools Everything SDK
 
 ## Prereqs
 
@@ -53,6 +54,10 @@ This repo is a **single repo (monorepo)** containing three apps:
 
 Then open:
 - `http://127.0.0.1:8001/`
+
+### Filesystem search (Windows only)
+
+- `cd filesearch-app && python filesearch_cli.py --json "files modified in the last five minutes that are text files"`
 
 ## Notes
 

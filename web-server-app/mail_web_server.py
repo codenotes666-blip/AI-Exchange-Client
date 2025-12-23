@@ -18,6 +18,13 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import msal
 import requests
 
+try:
+    from env_loader import load_env
+
+    load_env()
+except Exception:
+    pass
+
 
 def _load_yaml_config(path: str) -> dict:
     try:
