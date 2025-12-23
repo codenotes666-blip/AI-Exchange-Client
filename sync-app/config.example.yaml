@@ -1,0 +1,56 @@
+version: 1
+graph:
+  tenant_id_env: TENANT_ID
+  client_id_env: CLIENT_ID
+  client_secret_env: CLIENT_SECRET
+mailbox:
+  mailbox_upn_env: MAILBOX_UPN
+web:
+  host: 127.0.0.1
+  port: 8001
+  cache_notify:
+    enabled: true
+    interval_seconds: 30
+sync:
+  cache_range:
+    start_date: '2025-01-01T00:00:00Z'
+    end_date: now
+  max_messages_per_run: 500000
+  page_size: 50
+  folders:
+    names:
+    - Inbox
+    - Sent Items
+    exclude: []
+  attachments:
+    mode: full
+  auto_update:
+    enabled: true
+    interval_seconds: 60
+storage:
+  sqlite_path: mail_cache.sqlite
+index:
+  include_body: true
+  include_recipients:
+    to: true
+    cc: true
+    bcc: true
+logging:
+  level: INFO
+  file: null
+chat:
+  enabled: true
+  model: gpt-5.1
+  max_results: 6
+  max_snippet_chars: 400
+  max_context_chars: 4000
+  system_prompt: 'You are a mailbox assistant.
+
+    Answer the user using only the provided cache search results from the local SQLite
+    email cache.
+
+    If the cache results are insufficient to answer, say so and ask a clarifying question.
+
+    When relevant, cite emails by subject + date + folder.
+
+    '
