@@ -1,9 +1,9 @@
 [submodule "sync-app"]
 	path = sync-app
-	url = https://github.com/codenotes666-blip/AI-Exchange-Sync-App.git
+	url = https://github.com/codenotes-blip/AI-Exchange-Sync-App.git
 [submodule "agent-app"]
 	path = agent-app
-	url = https://github.com/codenotes666-blip/AI-Exchange-Chat-App.git
+	url = https://github.com/codenotes-blip/AI-Exchange-Chat-App.git
 [submodule "web-server-app"]
 	path = web-server-app
-	url = https://github.com/codenotes666-blip/AI-Exchange-Web-Server-App.git
+	url = https://github.com/codenotes-blip/AI-Exchange-Web-Server-App.git
