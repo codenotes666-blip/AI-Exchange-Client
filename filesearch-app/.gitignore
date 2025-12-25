@@ -1,0 +1,8 @@
+# Everything SDK DLLs are not committed
+Everything32.dll
+Everything64.dll
+Everything*.pdb
+Everything-SDK.zip
+
+__pycache__/
+*.pyc
